@@ -41,7 +41,7 @@ const Log = require('../models/logs.js')
 //         res.render(
 //             'log/edit.ejs',
 //             {
-//                 log: foundLog,
+//                 logs: foundLog,
 //                 currentUser: req.session.currentUser
 //             }
 //         )
@@ -94,7 +94,7 @@ router.get('/', (req, res)=> {
         res.render(
             'log/index.ejs',
             {
-             log: allLogs,
+             logs: allLogs,
              currentUser: req.session.currentUser   
             }
         )
@@ -109,7 +109,7 @@ router.get('/:id', (req,res)=> {
     Log.findById(req.params.id, (error, foundLog)=> {
         res.render(
             'log/show,ejs', {
-              log: foundLog, 
+              logs: foundLog, 
               currentUser: req.session.currentUser 
             }
         )
