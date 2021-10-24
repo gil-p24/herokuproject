@@ -57,7 +57,7 @@ app.get('/',(req, res) => {
 //controller
 //log controller
 const logController = require('./controllers/Log_controller.js')
-app.use('/feed', logController)
+app.use('/log', logController)
 
 //session controller
 const sessionController = require('./controllers/session_controller.js')
