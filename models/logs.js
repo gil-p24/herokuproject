@@ -5,7 +5,7 @@ const Schema = mongoose.Schema
      {
          title: {type: String},
          img:  {type: String, required: true},
-         notes: {type: string},
+         notes: {type: String},
 
      }, {timestamps: true}
 )
