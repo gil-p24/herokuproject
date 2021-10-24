@@ -1,0 +1,13 @@
+<header>
+    <h3><a href="/">Hike Log</a></h3>
+    <% if (currentUser){ %> 
+        <p>Happy trails<%= currentUser.username%> </p><br>
+        <form action="/sessions?_method=DELETE" method="POST">
+            <input type="submit" value="Log out">
+        </form>
+    <% } else { %> 
+        <a href="/sessions/new">login</a>
+        <a href="/users/new">sign up</a>
+        
+    <% } %> 
+</header>
