@@ -105,15 +105,15 @@ router.get('/', (req, res)=> {
 ///show route
 // add isAuthenticated after id
 
-router.get('/:id', (req,res)=> {
-    Log.findById(req.params.id, (error, foundLog)=> {
-        res.render(
-            'log/show,ejs', {
-              logs: foundLog, 
-              currentUser: req.session.currentUser 
-            }
-        )
-    })
-})
+// router.get('/:id', (req,res)=> {
+//     Log.findById(req.params.id, (error, foundLog)=> {
+//         res.render(
+//             'log/show,ejs', {
+//               logs: foundLog, 
+//               currentUser: req.session.currentUser 
+//             }
+//         )
+//     })
+// })
 
 module.exports = router
