@@ -23,14 +23,20 @@ const Log = require('../models/logs.js')
 // })
 
 
-//delete route
-// add isAuthenticated after id
+//index route
 
-router.delete('/:id', (req, res) => {
-    Log.findByIdAndDelete(req.params.id, (error, data) => {
-        res.redirect('/log')
+router.get('/', (req, res)=> {
+    Log.find({}, (error, allLogs)=>{
+        res.render(
+            'log/index.ejs',
+            {
+             logs: allLogs,
+             currentUser: req.session.currentUser   
+            }
+        )
     })
 })
+
 
 // edit route
 // add isAuthenticated after edit
@@ -61,9 +67,6 @@ router.put('/:id', (req, res)=> {
     )
 })
 
-
-
-
 // new route
 // add isAuthenticated after new
 
@@ -77,8 +80,6 @@ router.get('/new', (req,res) => {
 })
 
 
-
-
 //create route
 
 router.post('/', (req, res)=> {
@@ -87,19 +88,6 @@ router.post('/', (req, res)=> {
     })
 })
 
-//index route
-
-router.get('/', (req, res)=> {
-    Log.find({}, (error, allLogs)=>{
-        res.render(
-            'log/index.ejs',
-            {
-             logs: allLogs,
-             currentUser: req.session.currentUser   
-            }
-        )
-    })
-})
 
 
 ///show route
@@ -113,6 +101,16 @@ router.get('/:id', (req,res)=> {
               currentUser: req.session.currentUser 
             }
         )
+    })
+})
+
+
+//delete route
+// add isAuthenticated after id
+
+router.delete('/:id', (req, res) => {
+    Log.findByIdAndDelete(req.params.id, (error, data) => {
+        res.redirect('/log')
     })
 })
 

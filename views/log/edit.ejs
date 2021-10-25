@@ -8,8 +8,8 @@
 <body>
     <h1>Edit a Log</h1>
     <form action="/logs/<%=log.id%>?_method=put" method="post">
-      Title: <input type="text" name="title" value="<%=log.title%>" /><br />
-      Entry: <input type="textarea" name="entry" value="<%=log.entry%>" /><br />
+      Title: <input type="text" name="title" value="<%=logs.title%>" /><br />
+      Entry: <input type="textarea" name="entry" value="<%=logs.entry%>" /><br />
       <input type="submit" value="Create Log" />
     </form>
     <form action="/">
