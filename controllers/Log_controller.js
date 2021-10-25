@@ -23,6 +23,19 @@ const Log = require('../models/logs.js')
 // })
 
 
+// new route
+// add isAuthenticated after new
+
+router.get('/new', (req,res) => {
+    res.render(
+        'log/new.ejs',
+        {
+            currentUser: req.session.currentUser
+        }
+    )
+})
+
+
 //index route
 
 router.get('/', (req, res)=> {
@@ -67,17 +80,7 @@ router.put('/:id', (req, res)=> {
     )
 })
 
-// new route
-// add isAuthenticated after new
 
-router.get('/new', (req,res) => {
-    res.render(
-        'log/new.ejs',
-        {
-            currentUser: req.session.currentUser
-        }
-    )
-})
 
 
 //create route
