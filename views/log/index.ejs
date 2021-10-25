@@ -11,13 +11,15 @@
 
 
     <% for(let i = 0; i < logs.length; i++) { %>
-        <li>
-          <a href="/logs/<%= logs[i]._id%>"><%=logs[i].title%></a> |
-          <a href="/logs/<%= logs[i]._id%>/edit">EDIT</a> |
+        
+          <a href="/logs/<%= logs[i]._id%>"><%=logs[i].title%></a> 
+          <form action="/logs/<%=logs.id%>/edit">
+          <input type="submit" value="edit your log">
+          </form>
           <form action="/logs/<%= logs[i]._id%>?_method=DELETE" method="post">
             <input type="submit" value="DELETE" />
           </form>
-        </li>
+        
         <% } %>
 </body>
 </html>

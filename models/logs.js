@@ -4,8 +4,7 @@ const Schema = mongoose.Schema
  logSchema = new Schema(
      {
          title: {type: String},
-         img:  {type: String, required: true},
-         notes: {type: String},
+         entry: {type: String},
 
      }, {timestamps: true}
 )

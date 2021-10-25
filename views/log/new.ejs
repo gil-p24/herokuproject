@@ -6,6 +6,11 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>hello 2</h1>
-</body>
+    <h1>Create New Log</h1>
+    <form action="/logs" method="POST">
+      Title: <input type="text" name="title" /><br />
+      Entry: <input type="textarea" name="entry" /><br />
+      <input type="submit" value="Create Log" />
+    </form>
+  </body>
 </html>
