@@ -16,11 +16,21 @@ const Log = require('../models/logs.js')
 
 //seed route
 
-// router.get('/seed', (req, res) => {
-//     Log.create(Seed, (error, data) => {
-//         res.redirect('/log')
-//     })
-// })
+router.get('/seed', (req, res) => {
+    Log.collection.drop()
+    Log.create(
+        [
+            {
+                title: 'up old yeller',
+                entry: 'hiked for days but couldnt find my way'
+
+            }
+        ],
+        (err,data)=>{
+            res.redirect('/log')
+        }
+    )
+    })
 
 
 // new route
