@@ -4,23 +4,46 @@
   
   <%- include ('../partials/head.ejs') %>
 </head>
-<body>
-  
-<body>
-  <h1>Happy walking</h1>
-  <h2><a href="/log/new">log your trails</a></h2>
+ <!-- create a log btn -->
+ <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+  <a href="/log/new"class="btn btn-secondary btn-lg" tabindex="-1" role="button" aria-disabled="true"><i class="bi bi-bug"></i>log your trails</a>
+</div>
 
+<body>
+<!-- card -->
+<main class="my-5">
+  <div class="container">
 
-  <% for(let i = 0; i < logs.length; i++) { %>
-      
-        <a href="/log/<%= logs[i].id%>"><%=logs[i].title%></a> 
-        <a href="/log/<%= logs[i].id %>/edit">edit</a>
-        
+    <div class="card text-center">
+      <% for(let i = 0; i < logs.length; i++) { %>
+      <div class="card-header">
+        <a href="/log/<%= logs[i].id%>"><%=logs[i].title%><i class="bi bi-emoji-heart-eyes-fill"></i></a>
+      </div>
+      <div class="card-body">
+        <p class="card-text"> <div class="form-group">
+          <label for="FormControlTextarea"><i class="bi bi-pencil-square"></i></label>
+          <textarea class="form-control" id="FormControlTextarea" rows="7"><%=logs[i].entry%></textarea>
+        </div>
+      </p>
+        <a href="/log/<%= logs[i].id %>/edit"class="btn btn-primary">add more</a>
         <form action="/log/<%= logs[i]._id%>?_method=DELETE" method="post">
-          <input type="submit" value="DELETE" />
+          <input type="submit" value="X"/>
         </form>
       
-      <% } %>
-</body>
+        <% } %>
+      </div>
+      <div class="card-footer text-muted">
+        <i class="bi bi-cloud-sun-fill"></i>
+      </div>
+    </div>
+  </div>
+
+     
+      
 </body>
 </html>
+
+
+
+
+

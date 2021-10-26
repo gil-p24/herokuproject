@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+     <%- include ('../partials/head.ejs') %>
 </head>
 <body>
-    <h1>Edit a Log</h1>
-    <form action="/log/<%=logs.id%>?_method=put" method="post">
-      Title: <input type="text" name="title" value="<%=logs.title%>" /><br />
-      Entry: <input type="textarea" name="entry" value="<%=logs.entry%>" /><br />
-      <input type="submit" value="Create Log" />
-    </form>
-    <form action="/">
-        <input type="submit" name="" value="Return to Index">
-    </form>
+    <div class="mb-3">
+        <form action="/log/<%=logs.id%>?_method=put" method="post">
+            <label for="Input1" class="form-label">Enter</label>
+            Title:<input type="text" name ="title"  value="<%=logs.title%>" class="form-control" id="Input1" placeholder="Put title here">
+          </div>
+          <div class="mb-3">
+            <label for="Textarea1" class="form-label">put your thoughts in</label>
+           entry: <textarea class="form-control" name="entry" value="<%=logs.entry%>" id="Textarea1" rows="3"></textarea>
+           <input type="submit" value="Create Log" />
+           <form action="/">
+            <input type="submit"  value="Return">
+            </form>
+        </form>
+          </div>
+   
 </body>
 </html>
+
+
