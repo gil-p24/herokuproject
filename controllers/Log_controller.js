@@ -109,7 +109,7 @@ router.post('/', (req, res)=> {
 router.get('/:id', (req,res)=> {
     Log.findById(req.params.id, (error, foundLog)=> {
         res.render(
-            'log/show,ejs', {
+            'log/show.ejs', {
               logs: foundLog, 
               currentUser: req.session.currentUser 
             }

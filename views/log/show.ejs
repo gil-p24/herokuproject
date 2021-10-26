@@ -8,9 +8,9 @@
 <body>
     <h1><%=logs.title%> </h1>
     <div class='show-div'>
-        
+    <p><em>Creation Date: <%= logs.createdAt %></em></p>
       <p><%= logs.entry %></p>
-      <p><em>Creation Date: <%= logs.createdAt %></em></p>
+      
         <form action="/">
             <input type="submit" name="" value="Return to Index">
         </form>

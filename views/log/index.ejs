@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hike Log</title>
+  
+  <%- include ('../partials/head.ejs') %>
 </head>
 <body>
-    <h1>Happy walking</h1>
-    <h2><a href="/log/new">log your trails</a></h2>
+  
+<body>
+  <h1>Happy walking</h1>
+  <h2><a href="/log/new">log your trails</a></h2>
 
 
-    <% for(let i = 0; i < logs.length; i++) { %>
+  <% for(let i = 0; i < logs.length; i++) { %>
+      
+        <a href="/log/<%= logs[i].id%>"><%=logs[i].title%></a> 
+        <a href="/log/<%= logs[i].id %>/edit">edit</a>
         
-          <a href="/log/<%= logs[i].id%>"><%=logs[i].title%></a> 
-          <a href="/log/<%= logs[i].id %>/edit">edit</a>
-          
-          <form action="/log/<%= logs[i]._id%>?_method=DELETE" method="post">
-            <input type="submit" value="DELETE" />
-          </form>
-        
-        <% } %>
+        <form action="/log/<%= logs[i]._id%>?_method=DELETE" method="post">
+          <input type="submit" value="DELETE" />
+        </form>
+      
+      <% } %>
+</body>
 </body>
 </html>
